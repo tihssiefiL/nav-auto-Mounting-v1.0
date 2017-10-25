@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title></title>
+	<link rel="stylesheet" href="">
+	<style type="text/css">
+		body{
+			height: 2000px;
+			background: #000;
+			position: relative;
+		}
+		.container{
+			padding: 0px;
+			width:500px;
+		}
+		.nav{
+			position: absolute;
+			width: 500px;
+			height: 50px;
+			top: 50px;
+			margin: 0;
+			z-index: 1;
+		}
+		.scroll{
+			position: absolute;
+			top: 200px;
+			height:1000px;
+			width: 500px;
+			margin: 0;
+			background: #fe5e5e;
+		}
+		.a{
+			text-decoration: none;
+		}
+		.ul{
+			width: 500px;
+			height: 50px;
+			background: #fff;
+			list-style: none;
+			padding: 0px;
+			margin: 0px;
+		}
+		.li{
+			float: left;
+			width: 100px;
+			text-align: center;
+			line-height: 50px;
+			padding: 0px;
+			margin: 0px;
+		}
+		.li:hover{
+			background: #17D6DC;
+		}
+
+	</style>
+</head>
+<body class="body">
+<div class="container">
+		<div class="nav">
+		<ul class="ul">
+			<li class="li"><a href="" class="a">nav1</a></li>
+			<li class="li"><a href="" class="a">nav2</a></li>
+			<li class="li"><a href="" class="a">nav3</a></li>
+			<li class="li"><a href="" class="a">nav4</a></li>
+			<li class="li"><a href="" class="a">nav5</a></li>
+		</ul>
+	</div>
+	<div class="scroll">
+		
+	</div>
+</div>
+</body>
+	<script type="text/javascript">
+		var body_height;
+		var div_scroll;
+		$(window).scroll(function(){
+			body_height = $(window).height();  
+			div_scroll = $(document).scrollTop(); 
+			console.log("body_height="+body_height);
+			console.log("div_scroll="+div_scroll);
+
+		if(div_scroll > 200){
+			 $(".nav").css("position","fixed");
+			 $(".nav").css("top","0px");
+		}
+		else{
+			$(".nav").css("position","absolute");
+			 $(".nav").css("top","50px");
+		}
+		});
+
+
+
+
+		
+	</script>
+</html>
